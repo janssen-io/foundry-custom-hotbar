@@ -25,4 +25,3 @@ jobs:
         prerelease: false
         token: ${{ secrets.GITHUB_TOKEN }}
         artifacts: './module.json,./custom-hotbar.zip'
-        tag: ${{ github.ref }} 
