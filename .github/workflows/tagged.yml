@@ -14,15 +14,15 @@ jobs:
     - name: Update Version
       shell: bash
       id: set-version
-      run: node ./.github/workflows/set-version.js ${{ github.ref }}
+      run: echo "::set-output name=version::$(node ./.github/workflows/set-version.js ${{ github.ref }})"
     - name: Create Release
       id: create_versioned_release
       uses: ncipollo/release-action@v1
       with:
         allowUpdates: false
-        name: Release ${{ github.ref }}
+        name: Release ${{ steps.set-version.outputs.version }}
         draft: false
         prerelease: false
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: './module.json,./my-module.zip'
+        artifacts: './module.json,./custom-hotbar.zip'
         tag: ${{ github.ref }} 
