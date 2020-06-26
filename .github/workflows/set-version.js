@@ -9,4 +9,5 @@ if (!tagVersion || !tagVersion.startsWith('v')) {
 } else {
   manifest.version = tagVersion.substring(1); // strip the 'v'-prefix
   fs.writeFileSync('module.json', JSON.stringify(manifest, null, 2)); // pretty print JSON back to module.json
+  console.log(tagVersion);
 }

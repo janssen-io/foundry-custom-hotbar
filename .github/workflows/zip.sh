@@ -1,1 +1,1 @@
-zip -r ./my-module.zip module.json custom-hotbar.js css/ templates/
+zip -r ./custom-hotbar.zip module.json custom-hotbar.js css/ templates/
